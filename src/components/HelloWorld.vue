@@ -80,6 +80,7 @@
         </a>
       </li>
     </ul>
+    <button v-on:click="clickBtn()">点击进入下一个页面</button>
   </div>
 </template>
 
@@ -89,6 +90,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    clickBtn () {
+      this.$router.push('/layout')
     }
   }
 }

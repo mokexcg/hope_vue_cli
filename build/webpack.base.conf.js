@@ -24,6 +24,8 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  // output : 告诉webpack怎样存储输出结果以及存储到哪里 。path-->仅仅告诉结果存储在哪里，然而publicPath项则被
+  // 许多webpack的插件用于在生产模式下更新内嵌到css、html文件里的URL值。
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -38,6 +40,7 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  // module :模块加载器
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
